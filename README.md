@@ -36,15 +36,15 @@ Currently, it will provision an Android VM for development with the following sp
 
 	Visit the Android-VM repository on GitHub,
 		
-		[https://github.com/rickfarmer/android-vm](https://github.com/rickfarmer/android-vm)
+	[https://github.com/rickfarmer/android-vm](https://github.com/rickfarmer/android-vm)
 		
 	Clone the Android-VM repository directly from GitHub,
 	
-		[https://github.com/rickfarmer/android-vm.git](https://github.com/rickfarmer/android-vm.git)
+	[https://github.com/rickfarmer/android-vm.git](https://github.com/rickfarmer/android-vm.git)
 	
 	Download the Android-VM repository as a zip file,
 	
-		[https://github.com/rickfarmer/android-vm/archive/master.zip](https://github.com/rickfarmer/android-vm/archive/master.zip)
+	[https://github.com/rickfarmer/android-vm/archive/master.zip](https://github.com/rickfarmer/android-vm/archive/master.zip)
 
 
 ## Install Vagrant
@@ -100,7 +100,7 @@ _Note: All the software needed is automatically downloaded as it is needed.  Sev
 
 ## Manually Configure the Android VM in the Virtualization Provider
 	
-To connect an Android device you must manually setup a USB connection mapping for your Android device to the new VM"	
+To connect an Android device you must manually setup a USB connection mapping for your Android device to the new VM	
 	
 This configuration will vary with your provider (hypervisor), VMware Fusion, Workstation, or VirtualBox.
 
@@ -108,7 +108,7 @@ For example, if using VMware Fusion perform the following steps,
 
 1. Plug your android device hardware into the computers USB port
 2. Open the 'Virtual Machine Library'
-3. Select the VM, e.g. "android-vm: default", right-click and choose Settings...'
+3. Select the VM, e.g. "android-vm: default", right-click and choose 'Settings...'
 4. Select 'USB & Bluetooth', check the box next to your device and set the 'Plug In Action' to 'Connect to Linux'
 5. Plug the device into the USB port and verify that it appears when you run `lsusb` from the command line
 6. Your device should appear when running `lsusb` enabling you to use Android `adb`, e.g.
@@ -121,7 +121,7 @@ For example, if using VMware Fusion perform the following steps,
 		$ adb shell
 			i.e. to log into the device (be sure to enable USB debugging on the device)
 
-_Note: Additionally you may want to change various settings in the Virtualization Provider to size memory and vCPUs to the Android VM_
+_Note: Additionally you may want to change various settings in the Virtualization Provider to size memory and vCPUs allocated to the Android VM_
 
 ### Vagrant Basics &amp; Workflow
 
@@ -135,11 +135,11 @@ To see the available boxes,
 		precise64   (virtualbox)
 		centos64    (vmware_fusion)
 
-The box files (aka template VMs) are stored in ~/vagrant.d but you should not care since you manage the box files through vagrant.
+The box files (aka template VMs) are stored in `~/vagrant.d` but you should not care since you manage the box files through vagrant.
 
-When you issue "vagrant up", vagrant will download the box from the url unless its already cached locally.  Once available, it will clone the box into the directory you've chosen to work in, e.g. /csci65/android-vm
+When you issue `vagrant up`, vagrant will download the box from the url unless its already cached locally.  Once available, it will clone the box into the directory you've chosen to work in, e.g. `/csci65/android-vm`
 
-In the base directory (e.g. /csci65/android-vm) where the Vagrantfile is located, you should see a hidden .vagrant directory which holds the actual cloned VM files if you are interested in exploring further.
+In the base directory (e.g. `/csci65/android-vm`) where the `Vagrantfile` is located, you should see a hidden `.vagrant` directory which holds the actual cloned VM files if you are interested in exploring further.
 
 - To start your vagrant system use,
 
@@ -157,12 +157,13 @@ In the base directory (e.g. /csci65/android-vm) where the Vagrantfile is located
 
 - To login to your vagrant system use,
 
-	$ vagrant ssh
+		$ vagrant ssh
 
 - The basic workflow is, 
 
 		$ vagrant up    # To start the VM using VirtualBox (default)
-	or
+or
+		
 		$ vagrant up --provider=vmware_fusion     # To start the VM using VMware Fusion (vmware_workstation for Windows users)
 			*Spins up the Android VM and loads the Ubuntu Unity desktop UI*
 		$ vagrant ssh
@@ -179,12 +180,13 @@ In the base directory (e.g. /csci65/android-vm) where the Vagrantfile is located
 		
 		$ vagrant status
 		$ vagrant halt  # To shutdown the VM
-	or
+or
+
 		$ vagrant suspend  
 
-	These are the only commands you will likely use on a regular basis.  Vagrant manages everything for you, so there is no need to configure the VM from VMware or Virtual Box except to change the VM memory, CPU allocation, &amp; connect the Android USB device for connection via the Android `adb` command.  
+- These are the only commands you will likely use on a regular basis.  Vagrant manages everything for you, so there is no need to configure the VM from VMware or Virtual Box except to change the VM memory, CPU allocation, &amp; connect the Android USB device for connection via the Android `adb` command.
 
-If you are interested in the other option Vagrant offers, please see the help file using,
+If you are interested in the other options Vagrant offers, please see the man help file using,
 
 	$ vagrant --help
 
