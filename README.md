@@ -55,9 +55,7 @@ Note: Vagrant has a prerequisite of an installed and functioning version of one 
 * [VMware Workstation (windows, linux)](http://www.vmware.com/products/workstation/workstation-evaluation) (Trial)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (Free)
 
-1. Download and install the latest version of Vagrant for your OS from,
-
-		[http://downloads.vagrantup.com/](http://downloads.vagrantup.com/)
+1. Download and install the latest version of Vagrant for your OS from  [https://www.vagrantup.com/downloads.html](vagrantup.com/)
 
 2. If using VMware, install the purchased VMware Provider Plug-in as mentioned in the documentation
 
