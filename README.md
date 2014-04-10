@@ -66,7 +66,9 @@ _Note: All the software needed is automatically downloaded as it is needed.  Sev
 
 1. From the newly created working directory, e.g.
 
-		$ cd /csci65/android-vm && git submodule init
+		$ cd /csci65/android-vm 
+		$ git submodule init
+		$ git submodule update
 
 2. Run the following to start Vagrant and kick-off the process to build an Android VM,
 	
