@@ -122,7 +122,7 @@ For example, if using VMware Fusion perform the following steps,
 			i.e. to log into the device (be sure to enable USB debugging on the device)
 
 _Note: Additionally you may want to change various settings in the Virtualization Provider to size memory and vCPUs allocated to the Android VM_
-_Note: To open the terminal from desktop, use ctrl-alt-T
+_Note: To open the terminal from desktop, use ctrl-alt-T for PC or control-option-T for Mac
 
 ### Vagrant Basics &amp; Workflow
 
