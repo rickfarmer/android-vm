@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
 echo "Installing System Tools..."
+sudo apt-get update -y >/dev/null 2>&1
 sudo apt-get install -y curl >/dev/null 2>&1
 sudo apt-get install -y unzip >/dev/null 2>&1
 sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 >/dev/null 2>&1
 sudo apt-get update >/dev/null 2>&1
 sudo apt-get install apt-file && apt-file update
 sudo apt-get install -y python-software-properties >/dev/null 2>&1
+
+#  http://askubuntu.com/questions/147400/problems-with-eclipse-and-android-sdk
+sudo apt-get install -y ia32-libs >/dev/null 2>&1
 
 # Install a desktop for the Android graphical tooling, e.g. Eclipse
 
