@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
-
-echo "Installing System Tools..."
-sudo apt-get update -y >/dev/null 2>&1
-sudo apt-get install -y curl >/dev/null 2>&1
-sudo apt-get install -y unzip >/dev/null 2>&1
-sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 >/dev/null 2>&1
-sudo apt-get update >/dev/null 2>&1
-sudo apt-get install apt-file && apt-file update
-sudo apt-get install -y python-software-properties >/dev/null 2>&1
+echo " "
+echo "*****Installing System Tools...*****"
+echo " "
+sudo apt-get -y --force-yes update >/dev/null 2>&1
+sudo apt-get -y --force-yes install curl >/dev/null 2>&1
+sudo apt-get -y --force-yes install unzip >/dev/null 2>&1
+sudo apt-get -y --force-yes install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 >/dev/null 2>&1
+sudo apt-get -y --force-yes update >/dev/null 2>&1
+sudo apt-get -y --force-yes install apt-file && apt-file update
+sudo apt-get -y --force-yes install python-software-properties >/dev/null 2>&1
 
 #  http://askubuntu.com/questions/147400/problems-with-eclipse-and-android-sdk
-sudo apt-get install -y ia32-libs >/dev/null 2>&1
+sudo apt-get -y --force-yes install ia32-libs >/dev/null 2>&1
+
+echo " "
+echo "*****Installing Vbox guest utils (for high res support)*****"
+echo " "
+sudo apt-get -y --force-yes install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
 
 # Install a desktop for the Android graphical tooling, e.g. Eclipse
 
@@ -31,8 +37,9 @@ sudo apt-get install -y ia32-libs >/dev/null 2>&1
 #    5) echo "Installing KDE desktop..." | sudo apt-get install -y kubuntu-desktop >/dev/null 2>&1;;
 #    6) exit
 #esac 
-
-echo "Installing Ubuntu Unity Desktop..."
+echo " "
+echo "*****Installing Ubuntu Unity Desktop...*****"
+echo " "
 sudo aptitude install -y --without-recommends ubuntu-desktop >/dev/null 2>&1
 
 # Or, the following desktop...
@@ -49,15 +56,17 @@ sudo aptitude install -y --without-recommends ubuntu-desktop >/dev/null 2>&1
 
 #echo "Installing Ubuntu KDE Desktop..."
 #sudo apt-get install -y kubuntu-desktop >/dev/null 2>&1
-
-echo "Installing Android ADT Bundle with SDK and Eclipse..."
+echo " "
+echo "*****Installing Android ADT Bundle with SDK and Eclipse...*****"
+echo " "
 cd /tmp
 sudo curl -O http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20130729.zip
 sudo unzip /tmp/adt-bundle-linux-x86_64-20130729.zip >/dev/null 2>&1
 sudo mv /tmp/adt-bundle-linux-x86_64-20130729 /usr/local/android/
 sudo rm -rf /tmp/adt-bundle-linux-x86_64-20130729.zip
-
-echo "Installing Android NDK..."
+echo " "
+echo "*****Installing Android NDK...*****"
+echo " "
 cd /tmp
 sudo curl -O http://dl.google.com/android/ndk/android-ndk-r9-linux-x86_64.tar.bz2
 sudo tar -jxf /tmp/android-ndk-r9-linux-x86_64.tar.bz2 >/dev/null 2>&1
@@ -70,17 +79,19 @@ sudo chmod -R 755 /usr/local/android
 
 sudo ln -s /usr/local/android/sdk/tools/android /usr/bin/android
 sudo ln -s /usr/local/android/sdk/platform-tools/adb /usr/bin/adb
-
-echo "Updating ANDROID_HOME..."
+echo " "
+echo "*****Updating ANDROID_HOME...*****"
+echo " "
 cd ~/
 cat << End >> .profile
 export ANDROID_HOME="/usr/local/android/sdk"
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 End
 
-
-echo "Adding USB device driver information..."
+echo " "
+echo "*****Adding USB device driver information...*****"
 echo "For more detail see http://developer.android.com/tools/device.html"
+echo " "
 
 sudo cp /vagrant/51-android.rules /etc/udev/rules.d
 sudo chmod a+r /etc/udev/rules.d/51-android.rules
