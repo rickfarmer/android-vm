@@ -30,13 +30,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # some recipes and/or roles.  
   config.vm.provision :chef_solo do |chef|
 
-    chef.cookbooks_path = "cookbooks"
+    chef.cookbooks_path = "chef_cookbooks"
 
     chef.add_recipe "apt"
-    chef.add_recipe "git"
-    chef.add_recipe "build-essential" 
-    chef.add_recipe "java" 
-    chef.add_recipe "vim"
+
 
   end
 

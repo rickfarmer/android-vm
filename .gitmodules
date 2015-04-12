@@ -1,0 +1,3 @@
+[submodule "chef_cookbooks/apt"]
+	path = chef_cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt
