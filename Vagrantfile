@@ -33,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = "chef_cookbooks"
 
     chef.add_recipe "apt"
+    chec.add_recipe "java"
 
 
   end

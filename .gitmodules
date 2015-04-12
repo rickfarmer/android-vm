@@ -1,3 +1,6 @@
 [submodule "chef_cookbooks/apt"]
 	path = chef_cookbooks/apt
 	url = https://github.com/opscode-cookbooks/apt
+[submodule "chef_cookbooks/java"]
+	path = chef_cookbooks/java
+	url = https://github.com/agileorbit-cookbooks/java
