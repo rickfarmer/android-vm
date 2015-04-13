@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo " "
-echo "*****Installing System Tools...*****"
+echo "***** Installing System Tools... *****"
 echo " "
 sudo apt-get -y --force-yes update >/dev/null 2>&1
 sudo apt-get -y --force-yes install curl >/dev/null 2>&1
@@ -14,7 +14,7 @@ sudo apt-get -y --force-yes install python-software-properties >/dev/null 2>&1
 sudo apt-get -y --force-yes install ia32-libs >/dev/null 2>&1
 
 echo " "
-echo "*****Installing Vbox guest utils (for high res support)*****"
+echo "***** Installing Vbox guest utils (for high res support) *****"
 echo " "
 sudo apt-get -y --force-yes install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
 
@@ -38,7 +38,7 @@ sudo apt-get -y --force-yes install virtualbox-guest-utils virtualbox-guest-x11 
 #    6) exit
 #esac 
 echo " "
-echo "*****Installing Ubuntu Unity Desktop...*****"
+echo "***** Installing Ubuntu Unity Desktop... *****"
 echo " "
 sudo aptitude install -y --without-recommends ubuntu-desktop >/dev/null 2>&1
 
@@ -57,15 +57,26 @@ sudo aptitude install -y --without-recommends ubuntu-desktop >/dev/null 2>&1
 #echo "Installing Ubuntu KDE Desktop..."
 #sudo apt-get install -y kubuntu-desktop >/dev/null 2>&1
 echo " "
-echo "*****Installing Android ADT Bundle with SDK and Eclipse...*****"
+echo "***** Installing Android Studio *****"
 echo " "
 cd /tmp
-sudo curl -O http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20130729.zip
-sudo unzip /tmp/adt-bundle-linux-x86_64-20130729.zip >/dev/null 2>&1
-sudo mv /tmp/adt-bundle-linux-x86_64-20130729 /usr/local/android/
-sudo rm -rf /tmp/adt-bundle-linux-x86_64-20130729.zip
+sudo curl -O https://dl.google.com/dl/android/studio/ide-zips/1.1.0/android-studio-ide-135.1740770-linux.zip
+sudo unzip /tmp/android-studio-ide-135.1740770-linux.zip >/dev/null 2>&1
+sudo mv /tmp/android-studio /usr/local/android/
+sudo rm -rf /tmp/android-studio-ide-135.1740770-linux.zip
+
 echo " "
-echo "*****Installing Android NDK...*****"
+echo "***** Installing the Android SDK and Build Tools *****"
+echo " "
+sudo curl -O http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
+cd /tmp/android-sdk-linux/tools
+sudo ./android update sdk --no-ui --filter 1,2,3,4,24,35,36,41,42,43
+cd /tmp/
+sudo mv /tmp/android-sdk-linux /usr/local/android/sdk/
+sudo rm -rf /tmp/android-sdk_r24.1.2-linux.tgz
+
+echo " "
+echo "***** Installing Android NDK... *****"
 echo " "
 cd /tmp
 sudo curl -O http://dl.google.com/android/ndk/android-ndk-r9-linux-x86_64.tar.bz2
@@ -80,7 +91,7 @@ sudo chmod -R 755 /usr/local/android
 sudo ln -s /usr/local/android/sdk/tools/android /usr/bin/android
 sudo ln -s /usr/local/android/sdk/platform-tools/adb /usr/bin/adb
 echo " "
-echo "*****Updating ANDROID_HOME...*****"
+echo "***** Updating ANDROID_HOME... *****"
 echo " "
 cd ~/
 cat << End >> .profile
@@ -89,7 +100,7 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 End
 
 echo " "
-echo "*****Adding USB device driver information...*****"
+echo "***** Adding USB device driver information... *****"
 echo "For more detail see http://developer.android.com/tools/device.html"
 echo " "
 
