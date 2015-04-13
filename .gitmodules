@@ -7,3 +7,9 @@
 [submodule "chef_cookbooks/build-essential"]
 	path = chef_cookbooks/build-essential
 	url = https://github.com/opscode-cookbooks/build-essential
+[submodule "chef_cookbooks/git"]
+	path = chef_cookbooks/git
+	url = https://github.com/jssjr/git
+[submodule "chef_cookbooks/vim"]
+	path = chef_cookbooks/vim
+	url = https://github.com/opscode-cookbooks/vim
