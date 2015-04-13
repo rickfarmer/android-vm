@@ -4,3 +4,6 @@
 [submodule "chef_cookbooks/java"]
 	path = chef_cookbooks/java
 	url = https://github.com/agileorbit-cookbooks/java
+[submodule "chef_cookbooks/build-essential"]
+	path = chef_cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential

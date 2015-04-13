@@ -17,7 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.gui = true
   end
   
-  
+  #Install Java 7
+  config.vm.provision :shell, inline: 'wget --no-check-certificate https://github.com/aglover/ubuntu-equip/raw/master/equip_java7_64.sh && bash equip_java7_64.sh'
   
   
   # Create a forwarded port mapping which allows access to a specific port
@@ -29,19 +30,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.  
+
+
   config.vm.provision :chef_solo do |chef|
 
     chef.cookbooks_path = "chef_cookbooks"
 
     chef.add_recipe "apt"
-    chef.json = { 
-      :java => { 
-        :oracle => {
-          :accept_oracle_download_terms => true
-          }
-        } 
-    }
-    chef.add_recipe "java::oracle"
+    chef.add_recipe "build-essential"
 
 
 
