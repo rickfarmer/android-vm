@@ -34,14 +34,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = "chef_cookbooks"
 
     chef.add_recipe "apt"
-    chef.add_recipe "java::oracle"
     chef.json = { 
       :java => { 
-        :oracle =>{
-          "accept_oracle_download_terms" => true
+        :oracle => {
+          :accept_oracle_download_terms => true
           }
         } 
     }
+    chef.add_recipe "java::oracle"
 
 
 
