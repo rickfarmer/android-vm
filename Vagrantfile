@@ -36,8 +36,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "apt"
     chef.add_recipe "java::oracle"
     chef.json = { 
-      "oracle" => { 
-        "accept_oracle_download_terms" => true 
+      :java => { 
+        :oracle =>{
+          "accept_oracle_download_terms" => true
+          }
         } 
     }
 
