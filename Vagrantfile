@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "hashicorp/precise64"
   config.vm.host_name = BOX_NAME
+  
 
 	# Boot with a GUI so you can see the screen. (Default is headless)
 	# config.vm.boot_mode = :gui
@@ -33,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = "chef_cookbooks"
 
     chef.add_recipe "apt"
-    chef.add_recipe "java"
+    chef.add_recipe "java::oracle"
 
 
   end
