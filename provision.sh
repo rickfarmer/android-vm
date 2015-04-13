@@ -18,6 +18,10 @@ echo "***** Installing Vbox guest utils (for high res support) *****"
 echo " "
 sudo apt-get -y --force-yes install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
 
+echo " "
+echo "***** Installing git... *****"
+sudo apt-get -y --force-yes install git
+
 # Install a desktop for the Android graphical tooling, e.g. Eclipse
 
 #echo "What is your preferred Ubuntu desktop?"
