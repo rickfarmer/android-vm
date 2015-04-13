@@ -75,7 +75,7 @@ echo " "
 sudo curl -O http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
 sudo tar zxvf android-sdk_r24.1.2-linux.tgz
 cd /tmp/android-sdk-linux/tools
-echo "y" | sudo ./android update sdk --no-ui --filter 1,2,3,4,24,35,36,41,42,43, API 21, 21.0.0
+echo "y" | sudo ./android update sdk --no-ui --filter 1,2,3,4,24,35,36,41,42,43,API 21,tool,platform-tool,doc
 cd /tmp/
 sudo mv /tmp/android-sdk-linux /usr/local/android/sdk/
 sudo rm -rf /tmp/android-sdk_r24.1.2-linux.tgz
