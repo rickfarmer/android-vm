@@ -66,7 +66,7 @@ echo " "
 cd /tmp
 sudo curl -O https://dl.google.com/dl/android/studio/ide-zips/1.1.0/android-studio-ide-135.1740770-linux.zip
 sudo unzip /tmp/android-studio-ide-135.1740770-linux.zip >/dev/null 2>&1
-sudo mv /tmp/android-studio /usr/local/android/
+sudo mv /tmp/android-studio /usr/local/android/android_studio/
 sudo rm -rf /tmp/android-studio-ide-135.1740770-linux.zip
 
 echo " "
