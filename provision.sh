@@ -63,6 +63,9 @@ sudo aptitude install -y --without-recommends ubuntu-desktop >/dev/null 2>&1
 echo " "
 echo "***** Installing Android Studio *****"
 echo " "
+
+sudo mkdir /usr/local/android
+sudo mkdir /usr/local/android/android_studio
 cd /tmp
 sudo curl -O https://dl.google.com/dl/android/studio/ide-zips/1.1.0/android-studio-ide-135.1740770-linux.zip
 sudo unzip /tmp/android-studio-ide-135.1740770-linux.zip >/dev/null 2>&1
