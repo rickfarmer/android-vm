@@ -1,15 +1,15 @@
-[submodule "cookbooks/apt"]
-	path = cookbooks/apt
-	url = https://github.com/opscode-cookbooks/apt.git
-[submodule "cookbooks/build-essential"]
-	path = cookbooks/build-essential
-	url = https://github.com/opscode-cookbooks/build-essential.git
-[submodule "cookbooks/git"]
-	path = cookbooks/git
-	url = https://github.com/opscode-cookbooks/git.git
-[submodule "cookbooks/vim"]
-	path = cookbooks/vim
-	url = https://github.com/opscode-cookbooks/vim.git
-[submodule "cookbooks/java"]
-	path = cookbooks/java
-	url = https://github.com/opscode-cookbooks/java.git
+[submodule "chef_cookbooks/apt"]
+	path = chef_cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt
+[submodule "chef_cookbooks/java"]
+	path = chef_cookbooks/java
+	url = https://github.com/agileorbit-cookbooks/java
+[submodule "chef_cookbooks/build-essential"]
+	path = chef_cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential
+[submodule "chef_cookbooks/git"]
+	path = chef_cookbooks/git
+	url = https://github.com/jssjr/git
+[submodule "chef_cookbooks/vim"]
+	path = chef_cookbooks/vim
+	url = https://github.com/opscode-cookbooks/vim
