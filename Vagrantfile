@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   
   config.vm.provider "vmware_fusion" do |v, override|
-    config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
+    override.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
     v.name = HARVARD_CLASS_NAME
     v.gui = true
     v.vmx["memsize"] = "1024"
