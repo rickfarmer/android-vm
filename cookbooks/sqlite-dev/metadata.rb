@@ -1,3 +1,4 @@
+name 		 "sqlite-dev"
 maintainer       "Pedro Axelrud"
 maintainer_email "pedroaxl@gmail.com"
 license          "MIT"
