@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18941017.svg)](https://doi.org/10.5281/zenodo.18941017)
 android-vm
 ==========
 
@@ -197,5 +198,3 @@ If you are interested in the other options Vagrant offers, please see the man he
 1. [Vagrant v2 documentation](http://docs.vagrantup.com/v2/getting-started/)
 2. [http://www.vagrantbox.es/](http://www.vagrantbox.es/)
 3. [Chef Cookbooks](http://community.opscode.com/cookbooks)
-
-
